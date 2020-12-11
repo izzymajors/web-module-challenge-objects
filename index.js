@@ -48,8 +48,22 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  discount: function(key){
+    if (key ==="teacher" || key==="student"){
+      return this.teacher*this.price;
+    } 
+    else if (key ==="public"){
+      return this.public*this.price;
+    }
+    
+  }
+  
+ 
 }
+   
+
+
+
 
 
 
@@ -69,7 +83,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
+console.log(reviews[5].feedback);
 
 
 
@@ -101,11 +115,11 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
+ function getReviewByIndex(array,number){
+ 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
-}
-
+  return `${array[index].name} gave the restaurant a ${array.rating} star review, and their feedback was: ${array.feedback}`;
+  }
 
   
 
@@ -121,8 +135,8 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview() {
+ 
 } 
 
 
