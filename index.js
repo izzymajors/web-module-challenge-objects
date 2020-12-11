@@ -48,19 +48,15 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  discount: function(key){
-    if (key ==="teacher" || key==="student"){
-      return this.teacher*this.price;
-    } 
-    else if (key ==="public"){
-      return this.public*this.price;
+  discount: function(customer){
+    if (customer === "teacher" || customer === "student"){
+      return (burger.price * .75);
     }
-    
+    else if (customer === "public"){
+      return (burger.price * .9);
+    }
   }
-  
- 
 }
-   
 
 
 
@@ -76,7 +72,7 @@ const reviews = [
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
     {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
-    {name: "Reyna", rating: 3.5, feedback: ""},
+    {name: "Reyna", rating: 3.5, feedback: "This place is chill"},
 ]
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -115,10 +111,10 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
- function getReviewByIndex(array,number){
+ function getReviewByIndex(array,index){
  
 
-  return `${array[index].name} gave the restaurant a ${array.rating} star review, and their feedback was: ${array.feedback}`;
+  return `${array[index].name} gave the restaurant a ${index.rating} star review, and their feedback was: ${index.feedback}`;
   }
 
   
@@ -135,10 +131,9 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview() {
- 
+function getLastReview(array) {
+ return `${array[array.lenght-1].name} gave the restaurant a ${array[array.lenght -1].rating} star review, and their feedback was: ${array[array.lenght-1].feedback}`
 } 
-
 
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
